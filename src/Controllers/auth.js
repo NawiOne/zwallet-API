@@ -44,6 +44,62 @@ const authCntroller = {
         }).catch((err) => {
             formRespons.error(res, err)
         })
+    },
+    deleteUser: (req, res) => {
+        authModel.deleteUser(req.query)
+        .then((data) => {
+            formRespons.success(res, data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
+    },
+    updatePassword: (req, res) => {
+        authModel.updatePassword(req.body, req.query)
+        .then((data) => {
+            formRespons.success(res, data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
+    },
+    getPIN: (req, res)=> {
+        authModel.getPIN(req.body,req.query)
+        .then((data) => {
+            formRespons.success(res,data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
+    },
+    changePIN: (req, res) => {
+        authModel.changePIN(req.body, req.query)
+        .then((data) => {
+            formRespons.success(res, data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
+    },
+    getEmail: (req, res) => {
+        authModel.getEmail(req.query)
+        .then((data) => {
+            formRespons.success(res,data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
+    },
+    resetPassword: (req, res) => {
+        authModel.ressetPassword(req.body, req.query)
+        .then((data) => {
+            formRespons.success(res, data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
+    },
+    updatePhone: (req, res) => {
+        authModel.updatePhone(req.body, req.query)
+        .then((data) => {
+            formRespons.success(res, data)
+        }).catch((err) => {
+            formRespons.error(res, err)
+        })
     }
 
 }

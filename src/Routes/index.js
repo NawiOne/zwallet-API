@@ -5,7 +5,8 @@ const express = require('express');
 // const menuRouter = require('./menu');
 // const historyRouter = require('./history');
 const authRouter = require('../Routes/auth');
-// const orderUserRouter = require('./userOrder')
+const contactRouter = require('./contact');
+const transRouter = require('../Routes/transaction');
 
 
 const indexRouter = express.Router();
@@ -15,4 +16,6 @@ const indexRouter = express.Router();
 // indexRouter.use('/orderuser', orderUserRouter)
 
 indexRouter.use("/auth", authRouter);
+indexRouter.use("/contact", contactRouter)
+indexRouter.use('/transaction', transRouter)
 module.exports = indexRouter;

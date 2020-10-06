@@ -43,7 +43,7 @@ const uploadFile = {
                 });
             } else{
                 try {
-                    req.body.picture = `http://localhost:2000/images/${req.file.filename}`
+                    req.body.picture = `http://192.168.43.52:2000/images/${req.file.filename}`
                   } catch {
                     console.log(err)
                   } finally {

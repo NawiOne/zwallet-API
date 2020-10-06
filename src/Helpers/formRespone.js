@@ -19,8 +19,28 @@ const formRespon = {
         const page = Number(query.page);
         const limit = Number(query.limit);
         const prevPage=
-            page ===1 ? "": `/getalldata/?page=${page-1}&limit=${limit}`;
-        const nextPage = data.length < limit ? "" : `/getalldata/?page=${page + 1}&limit=${limit}`;
+            page ===1 ? "": `/contact?page=${page-1}&limit=${limit}`;
+        const nextPage = data.length < limit ? "" : `/contact?page=${page + 1}&limit=${limit}`;
+        const responseObj = {
+            success : true,
+            status : 200,
+            data,
+            pageInfo: {
+                currentPage : query.page,
+                limit: query.limit,
+                prevPage,
+                nextPage,
+            }
+        }
+        res.json(responseObj)
+    },
+    paginationHistory: (query, res, data) =>{
+        const id = query.id
+        const page = Number(query.page);
+        const limit = Number(query.limit);
+        const prevPage=
+            page ===1 ? "": `/transaction?id=${id}&page=${page-1}&limit=${limit}`;
+        const nextPage = data.length < limit ? "" : `/transaction?id=${id}&page=${page + 1}&limit=${limit}`;
         const responseObj = {
             success : true,
             status : 200,
