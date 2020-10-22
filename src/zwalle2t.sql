@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2020 at 05:09 AM
+-- Generation Time: Oct 22, 2020 at 05:25 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.31
 
@@ -132,7 +132,8 @@ INSERT INTO `notification` (`id`, `sender_id`, `receiver_id`, `amount`, `transac
 (21, 126, 132, 25000, 'out', '2020-10-07 16:52:03'),
 (22, 126, 132, 20000, 'out', '2020-10-08 06:51:37'),
 (23, 126, 130, 20000, 'out', '2020-10-08 07:08:32'),
-(24, 133, 130, 150000, 'out', '2020-10-22 02:10:28');
+(24, 133, 130, 150000, 'out', '2020-10-22 02:10:28'),
+(25, 133, 123, 2000, 'out', '2020-10-22 03:25:22');
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,7 @@ CREATE TABLE `transactions` (
   `trans_type` varchar(50) NOT NULL,
   `amount` int(11) NOT NULL,
   `notes` varchar(250) NOT NULL,
-  `date` text NOT NULL DEFAULT current_timestamp()
+  `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -168,7 +169,8 @@ INSERT INTO `transactions` (`id`, `sender_id`, `receiver_id`, `trans_name`, `tra
 (85, 123, 128, 'transfer', 'out', 88000, 'beli pasir', '2020-10-07 00:49:41'),
 (89, 126, 132, 'transfer', 'out', 20000, 'bbbb', '2020-10-08 13:51:35'),
 (90, 126, 130, 'transfer', 'out', 20000, 'coba doang', '2020-10-08 14:08:29'),
-(91, 133, 130, 'transfer', 'out', 150000, 'buat beli odading', '2020-10-22 09:10:26');
+(91, 133, 130, 'transfer', 'out', 150000, 'buat beli odading', '2020-10-22 09:10:26'),
+(92, 133, 123, 'transfer', 'out', 2000, 'buat makan', '2020-10-22 10:25:20');
 
 -- --------------------------------------------------------
 
@@ -193,7 +195,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `pin`, `id_level`, `picture`, `balance`, `phone`) VALUES
-(123, 'jono', 'jono@mail.com', '$2b$10$w5NjbVVvH8ns56gwrF3usO6eIMfqXZGn/3MIcbivPYvBeRpdbkwI2', 123456, 2, 'http://192.168.43.52:2000/images/image-1601887441317.jpeg', 63036, '0821224584'),
+(123, 'jono', 'jono@mail.com', '$2b$10$w5NjbVVvH8ns56gwrF3usO6eIMfqXZGn/3MIcbivPYvBeRpdbkwI2', 123456, 2, 'http://192.168.43.52:2000/images/image-1601887441317.jpeg', 65036, '0821224584'),
 (126, 'nawi', 'rudinnawi@gmail.com', '$2b$10$zFQ37DrGaa28ZJLmJJBPju73cKXDW6r5F2ncxc4oEeGBoaxwIJpZW', 123456, 2, 'http://192.168.43.52:2000/images/image-1601562350903.jpg', 173262, '082324050691'),
 (127, 'david', 'david@mail.com', '$2b$10$X7NNvw0V4M6xaJ18bxo.d.n0qBhU5KCJfqMko7.qTzN7e17GG/x9q', 123456, 2, 'http://192.168.43.52:2000/images/image-1601562236631.jpg', 245182, '+62-822-8432-9343'),
 (128, 'markus', 'markus@mail.com', '$2b$10$lF7A36oORELEz85jjQWPAuT6pW4Bn5jJRoRHAgw4.KyvR8p2ozo2q', 123456, 2, 'http://192.168.43.52:2000/images/image-1601562282933.jpg', 262985, '+62-822-8432-9343'),
@@ -201,7 +203,7 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`, `pin`, `id_level`, `p
 (130, 'santi', 'sant@mail.com', '$2b$10$Rssxiv73RLfyUaoqGflWvOf6jSHb78/HxuyqVFQh5TZOuYx/brDHq', 123456, 2, 'http://192.168.43.52:2000/images/image-1602007356782.png', 412658, '082325689852'),
 (131, 'danang', 'danang@mail.com', '$2b$10$T84vkfW.uRE1YaU7c27Tq.m6RTiTsgCuB3WtlP/49LGM4fsazrw86', 123456, 2, 'http://192.168.43.52:2000/images/image-1601714236632.jpg', 206722, NULL),
 (132, 'nawi rudin', 'nawirudin@mail.com', '$2b$10$TODK.6105Mt1eDqb.1BPtedj.fYeyZXmyS32mHpMJgxanh0LEwR52', 123456, 2, 'http://192.168.43.52:2000/images/image-1601861225281.jpg', 180355, '08232639548'),
-(133, 'nawi', 'nhawirudin@gmail.com', '$2b$10$laSpRqutYyHsjhWowmZIWOOP2MmlKuZ9nIOsWRcSxYw1OSXS0hUBm', 123456, 2, 'http://192.168.43.52:2000/images/image-1603332570989.jpg', 50000, '082324560854');
+(133, 'nawi', 'nhawirudin@gmail.com', '$2b$10$laSpRqutYyHsjhWowmZIWOOP2MmlKuZ9nIOsWRcSxYw1OSXS0hUBm', 123456, 2, 'http://192.168.43.52:2000/images/image-1603332570989.jpg', 48000, '082324560854');
 
 --
 -- Indexes for dumped tables
@@ -265,13 +267,13 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `user`
